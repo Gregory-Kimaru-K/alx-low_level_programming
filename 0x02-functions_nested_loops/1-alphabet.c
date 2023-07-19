@@ -15,8 +15,8 @@ void print_alphabet(void)
 	_putchar('\n');
 }
 
-/**
- * main - main func
- * Return: returns 0
- */
+
+
+
+
 
