@@ -13,3 +13,10 @@ void print_alphabet(void)
 		i++;
 	}
 	_putchar('\n');
+}
+
+/**
+ * main - main func
+ * Return: returns 0
+ */
+
