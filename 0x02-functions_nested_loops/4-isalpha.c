@@ -4,7 +4,7 @@
  *@c: the character it checks
  * Return: returns 1 if alphabet and 0 if not
  */
-int int _isalpha(int c)
+int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
