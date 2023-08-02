@@ -6,9 +6,12 @@
  */
 int factorial(int n)
 {
-	if (n == 0 || 1)
+	unsigned int p;
+	p = n;
+
+	if (p <= 1)
 	{
 		return (1);
 	}
-	return (n * factorial(n - 1));
+	return (p * factorial(p - 1));
 }
