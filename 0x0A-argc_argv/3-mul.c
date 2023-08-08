@@ -7,9 +7,9 @@
  * @argv: The two numbers
  * Return: Returns 0
  */
+
 int main(int argc, char *argv[])
 {
-	int n;
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -17,5 +17,5 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-       return (0);	
+	return (0);
 }
