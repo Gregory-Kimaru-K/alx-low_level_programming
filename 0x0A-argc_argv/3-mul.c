@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
  * main - multiplies two numbers
  * @argc: the number of parameters
@@ -7,19 +9,13 @@
  */
 int main(int argc, char *argv[])
 {
+	int n;
 	if (argc != 3)
 	{
 		printf("Error\n");
 
 		return (1);
 	}
-	else
-	{
-		int num1 = *argv[1] - '0';
-		int num2 = *argv[2] - '0';
-
-		printf("%d\n", num1 * num2);
-
-		return (0);
-	}
+	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+       return (0);	
 }
