@@ -4,6 +4,7 @@
  * create_array - prints an array
  * @size: size of memory
  * @c: characters
+ * Return: returns a char
  */
 char *create_array(unsigned int size, char c)
 {
@@ -17,7 +18,7 @@ char *create_array(unsigned int size, char c)
 	else if (size != 0)
 	{
 
-		ptr = (char*) malloc(size * sizeof(char));
+		ptr = (char *) malloc(size * sizeof(char));
 
 		for (int i = 0; i < size; i++)
 		{
