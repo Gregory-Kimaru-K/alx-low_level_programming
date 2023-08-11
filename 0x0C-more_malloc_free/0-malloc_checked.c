@@ -7,7 +7,7 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	int *_alocate = malloc(b);
+	void *_alocate = malloc(b);
 
 	if (alocate == NULL)
 		exit(98);
