@@ -9,8 +9,8 @@ void *malloc_checked(unsigned int b)
 {
 	void *_alocate = malloc(b);
 
-	if (alocate == NULL)
+	if (_alocate == NULL)
 		exit(98);
 
-	return (alocate);
+	return (_alocate);
 }
