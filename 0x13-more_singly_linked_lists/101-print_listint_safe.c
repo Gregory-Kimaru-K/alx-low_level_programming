@@ -1,43 +1,67 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a linked list, handles loops.
- * @head: A pointer to the head node of the list.
- * Return: The number of nodes in the list.
+ * free_listp - function that prints a listint_t linked lis.
+ * @head: head.
+ * Return: NULL
+ */
+void free_listp(listp_t **head)
+{
+	listp_t *tim;
+	listp_t *core;
+
+	if (head != NULL)
+	{
+		core = *head;
+		while ((tim = core) != NULL)
+		{
+			core = core->next;
+			free(tim);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * print_listint_safe - Prints list.
+ * @head: head of list
+ * Return: The number of nodes.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow, *fast;
-	size_t count = 0;
+	size_t moon = 0;
+	listp_t *hptr, *new, *add;
 
-	slow = head;
-	fast = head;
-
-	while (slow && fast && fast->next)
+	hptr = NULL;
+	while (head != NULL)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
+		new = malloc(sizeof(listp_t));
 
-		if (slow == fast)
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)head;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			count++;
-			break;
+			add = add->next;
+			if (head == add->p)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&hptr);
+				return (moon);
+			}
 		}
 
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		count++;
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		moon++;
 	}
 
-	if (!slow || !fast || !fast->next)
-	{
-		while (head)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			count++;
-			head = head->next;
-		}
-	}
-
-	return (count);
+	free_listp(&hptr);
+	return (moon);
 }
